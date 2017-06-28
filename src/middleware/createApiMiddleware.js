@@ -58,8 +58,7 @@ function createMiddleware(host, defaultHeaders) {
       }
 
       if (_meta.invocation) {
-        urlParts = [...urlParts, '/', decamelize(resourceAttributes.meta.invocation)]
-        delete resourceAttributes.meta
+        urlParts = [...urlParts, '/', decamelize(_meta.invocation)]
       } else if (resource.type){
         urlParts = [...urlParts, '/', decamelize(resource.type)]
       }
