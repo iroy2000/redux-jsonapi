@@ -137,8 +137,7 @@ function createMiddleware(host, defaultHeaders) {
       }
 
       if (_meta.invocation) {
-        urlParts = [].concat((0, _toConsumableArray3.default)(urlParts), ['/', (0, _humps.decamelize)(resourceAttributes.meta.invocation)]);
-        delete resourceAttributes.meta;
+        urlParts = [].concat((0, _toConsumableArray3.default)(urlParts), ['/', (0, _humps.decamelize)(_meta.invocation)]);
       } else if (resource.type) {
         urlParts = [].concat((0, _toConsumableArray3.default)(urlParts), ['/', (0, _humps.decamelize)(resource.type)]);
       }
