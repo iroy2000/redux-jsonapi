@@ -26,10 +26,9 @@ function handleErrors(response) {
 async function handleResponse(response) {
   const { data, included = [], meta = {} } = await response.json();
 
-  console.log('handleResponse', response)
-
   if (data) {
     return {
+      responseHeaders: response.headers,
       statusText: response.statusText,
       status: response.status,
       resources: [...(Array.isArray(data) ? data : [data]), ...included],
@@ -107,7 +106,7 @@ function createMiddleware(host, defaultHeaders) {
       next(action);
 
       const data = await requestActions[action.type](action.payload);
-      store.dispatch(apiActions.receive(data.resources, action.type, { status: data.status, statusText: data.statusText }));
+      store.dispatch(apiActions.receive(data.resources, action.type, { status: data.status, statusText: data.statusText, responseHeaders: data.responseHeaders }));
       return data;
     }
 
