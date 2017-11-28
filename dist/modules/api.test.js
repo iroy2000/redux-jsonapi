@@ -162,7 +162,7 @@ describe('API module', function () {
         store = mockStore(initialState);
       });
 
-      it('makes requests to load any currently un-loaded relationships', (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
+      it('makes requests to load any currently un-loaded relationships', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
         return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
