@@ -47,15 +47,13 @@ var handleResponse = function () {
             _ref2$meta = _ref2.meta;
             meta = _ref2$meta === undefined ? {} : _ref2$meta;
 
-
-            console.log('handleResponse', response);
-
             if (!data) {
-              _context.next = 11;
+              _context.next = 10;
               break;
             }
 
             return _context.abrupt('return', {
+              responseHeaders: response.headers,
               statusText: response.statusText,
               status: response.status,
               resources: [].concat((0, _toConsumableArray3.default)(Array.isArray(data) ? data : [data]), (0, _toConsumableArray3.default)(included)),
@@ -65,14 +63,14 @@ var handleResponse = function () {
               meta: meta
             });
 
-          case 11:
+          case 10:
             return _context.abrupt('return', {
               resources: [],
               result: null,
               meta: meta
             });
 
-          case 12:
+          case 11:
           case 'end':
             return _context.stop();
         }
@@ -231,7 +229,7 @@ function createMiddleware(host, defaultHeaders) {
                 case 4:
                   data = _context3.sent;
 
-                  store.dispatch(apiActions.receive(data.resources, action.type, { status: data.status, statusText: data.statusText }));
+                  store.dispatch(apiActions.receive(data.resources, action.type, { status: data.status, statusText: data.statusText, responseHeaders: data.responseHeaders }));
                   return _context3.abrupt('return', data);
 
                 case 7:
