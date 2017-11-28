@@ -56,7 +56,7 @@ describe('Middleware', function () {
       action = { type: 'SOMETHING_UNRELATED' };
     });
 
-    it('allows the action to continue along to the next middleware', (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
+    it('allows the action to continue along to the next middleware', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
       return _regenerator2.default.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -91,7 +91,7 @@ describe('Middleware', function () {
         action = apiActions.read([{ _type: 'articles' }]);
       });
 
-      it('makes the request against an un-nested resource url', (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
+      it('makes the request against an un-nested resource url', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2() {
         return _regenerator2.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -119,7 +119,7 @@ describe('Middleware', function () {
         action = apiActions.read([{ _type: 'articles', id: 1 }, { _type: 'authors' }]);
       });
 
-      it('makes the request against a nested resource url', (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
+      it('makes the request against a nested resource url', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3() {
         return _regenerator2.default.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
@@ -149,7 +149,7 @@ describe('Middleware', function () {
             } } });
       });
 
-      it('makes the request against a nested resource url', (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4() {
+      it('makes the request against a nested resource url', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4() {
         return _regenerator2.default.wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
@@ -177,7 +177,7 @@ describe('Middleware', function () {
         action = apiActions.read({ _type: 'articles' });
       });
 
-      it('dispatches a RECEIVE action with the response data', (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee5() {
+      it('dispatches a RECEIVE action with the response data', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee5() {
         return _regenerator2.default.wrap(function _callee5$(_context5) {
           while (1) {
             switch (_context5.prev = _context5.next) {
@@ -196,7 +196,7 @@ describe('Middleware', function () {
         }, _callee5, undefined);
       })));
 
-      it('returns a promise with the data', (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee6() {
+      it('returns a promise with the data', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee6() {
         var data;
         return _regenerator2.default.wrap(function _callee6$(_context6) {
           while (1) {
@@ -227,7 +227,7 @@ describe('Middleware', function () {
         action = apiActions.read({ _type: 'articles' });
       });
 
-      it('throws the error with message and status code', (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee7() {
+      it('throws the error with message and status code', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee7() {
         return _regenerator2.default.wrap(function _callee7$(_context7) {
           while (1) {
             switch (_context7.prev = _context7.next) {
@@ -270,7 +270,7 @@ describe('Middleware', function () {
       action = apiActions.read({ _type: 'articles' }, { headers: { 'Custom': 'header' } });
     });
 
-    it('executes a GET request with the given payload', (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee8() {
+    it('executes a GET request with the given payload', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee8() {
       return _regenerator2.default.wrap(function _callee8$(_context8) {
         while (1) {
           switch (_context8.prev = _context8.next) {
@@ -314,7 +314,7 @@ describe('Middleware', function () {
       action = apiActions.write(article);
     });
 
-    it('executes a POST request with the given payload', (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee9() {
+    it('executes a POST request with the given payload', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee9() {
       return _regenerator2.default.wrap(function _callee9$(_context9) {
         while (1) {
           switch (_context9.prev = _context9.next) {
@@ -359,7 +359,7 @@ describe('Middleware', function () {
       action = apiActions.write(article);
     });
 
-    it('executes a PATCH request with the given payload', (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee10() {
+    it('executes a PATCH request with the given payload', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee10() {
       return _regenerator2.default.wrap(function _callee10$(_context10) {
         while (1) {
           switch (_context10.prev = _context10.next) {
@@ -405,7 +405,7 @@ describe('Middleware', function () {
       action = apiActions.remove(article);
     });
 
-    it('executes a DELETE request with the given payload', (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee11() {
+    it('executes a DELETE request with the given payload', (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee11() {
       return _regenerator2.default.wrap(function _callee11$(_context11) {
         while (1) {
           switch (_context11.prev = _context11.next) {

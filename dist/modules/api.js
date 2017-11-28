@@ -89,12 +89,13 @@ var remove = exports.remove = function remove(resources) {
   return request(DELETE, prepareResources(resources), payload);
 };
 
-var receive = exports.receive = function receive(resources, method) {
+var receive = exports.receive = function receive(resources, method, meta) {
   return {
     type: RECEIVE,
     payload: {
       method: method,
-      resources: resources
+      resources: resources,
+      meta: meta
     }
   };
 };
