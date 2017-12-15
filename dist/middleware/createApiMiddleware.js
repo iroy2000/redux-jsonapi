@@ -127,7 +127,7 @@ function createMiddleware(host, defaultHeaders) {
 
     var urlParts = [host];
 
-    resources.forEach(function (resource) {
+    resources.forEach(function (resource, index) {
       var resourceAttributes = resource.attributes;
 
       var _meta = {};
@@ -137,6 +137,7 @@ function createMiddleware(host, defaultHeaders) {
         _meta = resource.meta;
       } else if (resourceAttributes && resourceAttributes.meta) {
         _meta = resourceAttributes.meta;
+        delete resources[index].attributes.meta;
       }
 
       if (_meta.invocation) {

@@ -48,7 +48,7 @@ function createMiddleware(host, defaultHeaders) {
   const getURL = (resources, params, options = {}) => {
     let urlParts = [host];
 
-    resources.forEach((resource) => {
+    resources.forEach((resource, index) => {
       const resourceAttributes = resource.attributes
 
       var _meta = {}
@@ -58,6 +58,7 @@ function createMiddleware(host, defaultHeaders) {
         _meta = resource.meta
       } else if(resourceAttributes && resourceAttributes.meta) {
         _meta = resourceAttributes.meta
+        delete resources[index].attributes.meta
       }
 
       if (_meta.invocation) {
