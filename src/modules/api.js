@@ -84,6 +84,21 @@ function getInitialState() {
 
 function receiveReducer(state, { method, resources }) {
   return resources.reduce((nextState, resource) => {
+
+    // dirty state checking, if an entity is marked _dirty we're delegating to localStorage as
+    // the source of truth on the client.  The local values are reflected in the in-memory api
+    // wing of our state.  Therefore we do NOT want to overwrite these values as they get projected
+    // back to localStorage and deletes the local modifications.
+
+    // if the resource exists on the nextState
+    if(nextState[_humps.camelize(resource.type)] && nextState[_humps.camelize(resource.type)][resource.id]){
+      // and the resource is _dirty (it came from localStorage)
+      if(nextState[_humps.camelize(resource.type)][resource.id].attributes._dirty) {
+        // then pass the current accumulator with no changes
+        return nextState;
+      }
+    }
+
     return {
       ...nextState,
       [camelize(resource.type)]: {
