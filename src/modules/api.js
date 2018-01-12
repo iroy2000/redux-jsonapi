@@ -91,9 +91,9 @@ function receiveReducer(state, { method, resources }) {
     // back to localStorage and deletes the local modifications.
 
     // if the resource exists on the nextState
-    if(nextState[_humps.camelize(resource.type)] && nextState[_humps.camelize(resource.type)][resource.id]){
+    if(nextState[camelize(resource.type)] && nextState[camelize(resource.type)][resource.id]){
       // and the resource is _dirty (it came from localStorage)
-      if(nextState[_humps.camelize(resource.type)][resource.id].attributes._dirty) {
+      if(nextState[camelize(resource.type)][resource.id].attributes._dirty) {
         // then pass the current accumulator with no changes
         return nextState;
       }

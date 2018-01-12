@@ -25,7 +25,7 @@ var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProp
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
-var _humps2 = require('humps');
+var _humps = require('humps');
 
 var _serializers = require('../serializers');
 
@@ -134,15 +134,15 @@ function receiveReducer(state, _ref2) {
     // back to localStorage and deletes the local modifications.
 
     // if the resource exists on the nextState
-    if (nextState[_humps.camelize(resource.type)] && nextState[_humps.camelize(resource.type)][resource.id]) {
+    if (nextState[(0, _humps.camelize)(resource.type)] && nextState[(0, _humps.camelize)(resource.type)][resource.id]) {
       // and the resource is _dirty (it came from localStorage)
-      if (nextState[_humps.camelize(resource.type)][resource.id].attributes._dirty) {
+      if (nextState[(0, _humps.camelize)(resource.type)][resource.id].attributes._dirty) {
         // then pass the current accumulator with no changes
         return nextState;
       }
     }
 
-    return (0, _extends5.default)({}, nextState, (0, _defineProperty3.default)({}, (0, _humps2.camelize)(resource.type), (0, _extends5.default)({}, nextState[(0, _humps2.camelize)(resource.type)], (0, _defineProperty3.default)({}, resource.id, method === DELETE ? undefined : resource))));
+    return (0, _extends5.default)({}, nextState, (0, _defineProperty3.default)({}, (0, _humps.camelize)(resource.type), (0, _extends5.default)({}, nextState[(0, _humps.camelize)(resource.type)], (0, _defineProperty3.default)({}, resource.id, method === DELETE ? undefined : resource))));
   }, state);
 }
 
